@@ -1,0 +1,33 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/01_02title.jpg"%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        {% for leg in legislation %}
+        <h4>教師升等相關要點</h4>
+        	{% for i in leg.promotion.all %}
+        	<ul>
+        	<li>{{i.filename}}
+        	<a href="{{i.file.url}}">[DOWNLOAD]</a></li>
+        	</ul>
+        	{% endfor%}
+       	<h4>其他相關要點</h4>
+       		{% for j in leg.point.all %}
+       		<ul>
+        	<li>{{j.filename}}
+        	<a href="{{j.file.url}}">[DOWNLOAD]</a></li>
+        	</ul>
+       		{% endfor %}
+       	<h4>獎學金相關要點</h4>
+       		{% for k in leg.scholar.all %}
+       		<ul>
+        	<li>{{k.filename}}
+        	<a href="{{k.file.url}}">[DOWNLOAD]</a></li>
+        	</ul>
+       		{% endfor %}
+       	{% endfor %}
+    </div>
+    {% endblock %}
+</div>

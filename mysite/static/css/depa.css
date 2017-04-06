@@ -1,0 +1,38 @@
+div.depar_title {
+    width: 90%;
+    height: auto;
+    /* padding: 20px 20px; */
+    margin: 0 auto;
+    margin-top: 30px;
+    box-sizing: border-box;
+}
+
+.depar_title p {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.depar_title h4 {
+    background-color: #5FCF80;
+    color: white;
+    margin: 20px auto;
+    padding: 5px 20px;
+    font-weight: 700;
+}
+
+.depar_title ul {
+    padding: 0 20px;
+}
+
+.depar_title>ul>li {
+    list-style-type: none;
+}
+
+.depar_title a{
+	color: red;
+}
+
+.depar_title p{
+	line-height: 25px;
+}

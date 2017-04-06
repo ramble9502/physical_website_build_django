@@ -1,0 +1,27 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/05_paper_title.jpg"%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        {%for graduated in graduatedpaper%}
+        <h4>{{graduated.name}}</h4>
+        <table>
+            <tr>
+                <th>姓名</th>
+                <th>論文題目</th>
+                <th>指導教授</th>
+            </tr>
+            {%for i in graduated.graduatedpaper.all%}
+            <tr>
+                <td>{{i.author}}</td>
+                <td>{{i.papertopic}}</td>
+                <td>{{i.advisor}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {%endfor%}
+    </div>
+    {% endblock %}
+</div>

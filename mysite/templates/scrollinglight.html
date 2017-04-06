@@ -1,0 +1,9 @@
+<div class="scrolling-limit">
+    <div class="scrolling">
+        {% block content%}
+        {%for marquee in marqueecontrol%}
+        	<p>{{marquee.content}}</p> 
+        {%endfor%}
+        {% endblock %}
+    </div>
+</div>

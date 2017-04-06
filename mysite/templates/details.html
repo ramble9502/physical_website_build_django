@@ -1,0 +1,81 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/title.jpg"%}">
+    </div>
+    {% include 'scrollinglight.html'%}
+    <p>更新日期：2016年11月22日</p>
+     {%block content%}
+    <table class="latest_news">
+        <thead>
+            <tr>
+                <th colspan="2">最新消息</th>
+                <th><a href="/latestnews">顯示更多訊息>></a></th>
+            </tr>
+        </thead>
+        <tbody>
+           
+            {%for lastnew in latestnews%}
+            <tr class='click_toggle'>
+                <td>{{lastnew.create_date}}</td>
+                <td>{{lastnew.title}}</td>
+                <td>系務公告</td>
+            </tr>
+            <tr class="click_content">
+                <td colspan="3"> {{lastnew.content|linebreaks}}
+                <p style="font-weight:bold;">相關文件下載:</p>
+                {% for i in lastnew.latestnews.all%}
+                <p style="font-weight:bold;">
+                        {{i.filename}}
+                        {% if i.file %}
+                        <a style="color:red;" href="{{i.file.url}}" target="_blank">[DOWNLOAD]</a>
+                        {%endif%} 
+                        {% if i.file2 %}
+                        <a  style="color:red;" href="{{i.file2.url}}" target="_blank">[DOWNLOAD]</a>
+                        {%endif%} 
+                </p>
+                {%endfor%}
+                </td>
+
+            </tr>
+            {%endfor%}
+        
+        </tbody>
+    </table>
+    <table class="training_news">
+        <thead>
+            <tr>
+                <th colspan="2">研習訊息</th>
+                <th><a href="workshopnews">顯示更多訊息></a></th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for worknew in workshopnews%}
+            <tr class='click_toggle'>
+                <td>{{worknew.create_date}}</td>
+                <td>{{worknew.title}}</td>
+                <td></td>
+            </tr>
+            <tr class="click_content">
+                <td colspan="3"> {{worknew.content|linebreaks}}
+                <p style="font-weight:bold;">相關文件下載:</p>
+                {% for i in worknew.workshop.all%}
+                <p style="font-weight:bold;">
+                        {{i.filename}}
+                        {% if i.file %}
+                        <a style="color:red;" href="{{i.file.url}}" target="_blank">[DOWNLOAD]</a>
+                        {%endif%} 
+                        {% if i.file2 %}
+                        <a  style="color:red;" href="{{i.file2.url}}" target="_blank">[DOWNLOAD]</a>
+                        {%endif%} 
+                </p>
+                {%endfor%}
+                </td>
+
+            </tr>
+            {%endfor%}
+            
+        </tbody>
+    </table>
+    {%endblock%}
+</div>

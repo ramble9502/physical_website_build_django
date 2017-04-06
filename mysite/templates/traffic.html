@@ -1,0 +1,42 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/03_01title.jpg"%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        {% for tra in traffic %}
+            <table>
+                {% if tra.name == 1 %}
+                <tr>
+                    <h4>臺南大學交通資訊（府城校區）</h4>
+                </tr>
+                {% for i in tra.trafmeth.all %}
+                <tr>
+                    <td width="27%"><h5>{{i.method|linebreaks}}</h5></td>
+                    <td><h5>{{i.process|linebreaks}}</h5></td>
+                </tr>
+                {% endfor %}
+                {%endif%}
+            </table>
+            <table>
+                {% if tra.name == 2 %}
+                <tr>
+                    <h4>臺南大學交通資訊（府城校區）</h4>
+                </tr>
+                {% for i in tra.trafmeth.all %}
+                <tr>
+                    <td width="27%"><h5>{{i.method|linebreaks}}</h5></td>
+                    <td><h5>{{i.process|linebreaks}}</h5></td>
+                </tr>
+                {% endfor %}
+                {%endif%}
+            </table>
+           
+        {% endfor %}
+    </div>
+    {% endblock %}
+</div>
+
+
+

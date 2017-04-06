@@ -1,0 +1,17 @@
+branch-defaults:
+  default:
+    environment: env-dev
+    group_suffix: null
+environment-defaults:
+  Sample-env-1:
+    branch: null
+    repository: null
+global:
+  application_name: env
+  branch: null
+  default_ec2_keyname: MyFirstKey
+  default_platform: Python 2.7
+  default_region: us-west-2
+  profile: eb-cli
+  repository: null
+  sc: null

@@ -1,0 +1,14 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/01_03title.jpg"%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        {% for equ in equipment %}
+        <h4>{{equ.name}}</h4>
+        <p>{{equ.description|linebreaks}}</p>
+        {% endfor %}
+    </div>
+    {% endblock %}
+</div>

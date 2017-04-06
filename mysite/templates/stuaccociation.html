@@ -1,0 +1,23 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/04_04title.jpg"%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        <h4>系學會相關文件</h4> 
+        {% for stu in stuaccociation %}
+        <ul>
+            <li>{{stu.filename}}
+            {% if stu.file %}
+            <a href="{{stu.file.url}}">[DOWNLOAD]</a>
+            {% endif %}
+            {% if stu.file2 %}
+            <a href="{{stu.file2.url}}">[DOWNLOAD]</a>
+            {%endif%}
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+    {% endblock %}
+</div>

@@ -1,0 +1,26 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img style="width:100%;height:100%;" src="{%static "images/04_05title.jpg"%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        <h4>榮譽榜</h4> 
+        {% for honor in honor %}
+        <p style="color:red;">賀!</p>{{honor.content|linebreaks}}
+        {% for i in honor.honor.all%}
+        <ul>
+            <li>{{i.filename}}
+            {% if i.file %}
+            <a href="{{i.file.url}}">[DOWNLOAD]</a>
+            {% endif %}
+            {% if i.file2 %}
+            <a href="{{i.file2.url}}">[DOWNLOAD]</a>
+            {% endif %}
+            </li>
+        </ul>
+        {%endfor%}
+        {% endfor %}
+    </div>
+    {% endblock %}
+</div>

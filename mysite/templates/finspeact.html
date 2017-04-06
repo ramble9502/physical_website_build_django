@@ -1,0 +1,16 @@
+{%load static%}
+<div class="details">
+    {% block content %}
+    <div class="depar_title">
+    	{% for finspeact in finspeact2 %}
+    	<img src="{{finspeact.image.url}}" style="width:50%;height: auto; ">
+        <p>{{finspeact.name}}</p>
+    	<p>{{finspeact.latest_news|linebreaks}}</p>
+    
+    	<p>{{finspeact.fans_connect}}</p>
+    <p>{{finspeact.related_url}}</p>
+    
+    {%endfor%}
+    </div>
+    {% endblock %}
+</div>

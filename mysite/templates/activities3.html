@@ -1,0 +1,38 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/bg_photo.jpg"%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+
+        {%for act in activities%}
+            {% if act.filetitle == "體育表演會"%}
+                <h4>{{act.year}}</h4>
+                {% for content in act.activities.all%}
+                <table>
+                    <tr>
+                        <th style="width:35%;padding: 12px;">
+                            {% for i in content.academicimage.all|slice:":1" %}
+                            <img src="{{i.image.url}}" style="width:100%;">
+                        {%endfor%}
+                            
+                        </th>
+                        <th style="width:65%;">{{content.name}}<br>{{content.date}}<br>
+                        {% if content.speaker %}
+                        {{content.speaker}}<br>
+                        {%endif%}
+                        {%if content.place %}
+                        {{content.place}}<br>
+                        {%endif%}
+                        <a href="/actdetail/{{content.id}}">研習或相關照片→</a></th>
+                    </tr>
+                </table>
+                    
+                    
+                {% endfor %}
+            {%endif%}
+        {%endfor%}
+    </div>
+    {% endblock %}
+</div>

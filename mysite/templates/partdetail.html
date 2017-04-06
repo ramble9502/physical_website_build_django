@@ -1,0 +1,53 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/02_01title.jpg "%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        {%for partdetail in partdetail%}
+            <h2 style="border-left: solid #dfdfbc 10px;text-align: left;
+            border-bottom: solid #dfdfbc 1px;font-weight:200;padding:0 10px; box-sizing:border-box;">{{partdetail.name}}</h2>
+            <div class="fullintroduction" style="width:75%; float:left;">
+                <p>分機 : {{partdetail.telephone_extension}}</p>
+                <p>Email : {{partdetail.Email}}</p>
+                <h5 style="font-size: 14px;color: darkred;margin-top: 20px;margin-bottom: 10px;text-align: left;border-left: solid #C84937 10px;padding:0 10px;box-sizing:border-box;border-bottom:solid #C84937 1px;">PROFILE</h5>
+                <p>職稱 : {{partdetail.job}}</p>
+                <p>學歷 : {{partdetail.education}}</p>
+                <p>專長 : {{partdetail.specialty}}</p>
+                <p>教授課程 : {{partdetail.course}}</p>
+                <p>經歷 : {{partdetail.experience}}</p>
+            </div>
+            <div class="fullimage" style="width:25%; float:left;">
+                <img src="{{partdetail.photo.url}}" style="width:100%; overflow:hidden;">
+            </div>
+            <div style="clear:both;"></div>
+            <h5 style="font-size: 14px;color: darkred;margin-top: 20px;margin-bottom: 10px;text-align: left;border-left: solid #C84937 10px;padding:0 10px;box-sizing:border-box;border-bottom:solid #C84937 1px;">WORK</h5>
+            <div style="padding: 3px;background: #808080;text-align: left;color: white;font-weight: bold;margin-top: 10px;font-size:13px;">期刊論文</div>
+            <table style="font-size: 13px;width: 100%;">
+                {%for per in partdetail.periodical2.all%}
+                <tr>
+                    <td style="padding:0;text-align:left;">{{per.title}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+            <div style="padding: 3px;background: #808080;text-align: left;color: white;font-weight: bold;margin-top: 10px;font-size:13px;">研討會論文</div>
+            <table style="font-size: 13px;width: 100%;">
+                {%for sem in partdetail.seminar2.all%}
+                <tr>
+                    <td style="padding:0;text-align:left;"> {{sem.title}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+            <div style="padding: 3px;background: #808080;text-align: left;color: white;font-weight: bold;margin-top: 10px;font-size:13px;">專書</div>
+            <table style="font-size: 13px;width: 100%;">
+                {%for book in partdetail.book2.all%}
+                <tr>
+                    <td style="padding:0;text-align:left;">{{book.title}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        {%endfor%}
+    </div>
+    {% endblock %}
+</div>

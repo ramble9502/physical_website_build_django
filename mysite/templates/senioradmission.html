@@ -1,0 +1,29 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/03_01title.jpg "%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        {% for senior in senioradmi %}
+        <h4>{{senior.title}}</h4> {% for i in senior.seninorup.all%}
+        <ul>
+            <li>{{i.filename}}</li>
+            <li>
+                {% if i.file1 %}
+                <a href="{{i.file1.url}}" target="_blank">[DOWNLOAD]</a> 
+                {% endif %} 
+                {% if i.file2 %}
+                <a href="{{i.file2.url}}">[DOWNLOAD]</a> 
+                {% endif %}
+            </li>
+            <li>
+                {% if i.image %}
+                <a href="{{i.image.url}}" target="_blank">[IMAGE_LINK]</a> {% endif %}
+            </li>
+        </ul>
+        {% endfor %} {% endfor %}
+    </div>
+    {% endblock %}
+</div>
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>台南大學體育系</title>
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{%static "css/menu.css"%}">
+    <link rel="stylesheet" type="text/css" href="{%static "css/index.css"%}">
+    <link rel="stylesheet"  href="{%static "css/fontawesome/css/font-awesome.min.css"%}">
+    <link rel="stylesheet" type="text/css" href="{%static "css/calendar.css"%}">
+    <link rel="stylesheet" type="text/css" href="{%static "css/font_face.css"%}">
+    <link rel="stylesheet" type="text/css" href="{%static "css/depa.css"%}">
+    <script type="text/javascript" src="{%static "js/jquery.min.js"%}"></script>
+    <script type="text/javascript" src="{%static "js/menu.js"%}"></script>
+    <script type="text/javascript" src="{%static "js/calendar.js"%}"></script>
+    
+    
+</head>
+
+<body>
+    {% include 'headermenu.html'%}
+    <!-- /#header -->
+    <div id="adbox">
+        <div class="body">
+            {%include 'activity_news.html'%}
+            {%include 'honor.html' %}
+            {%include 'calendarlinkbar.html'%}
+        </div>
+    </div>
+    <!-- /#adbox -->
+    {% include 'footer.html'%}
+    
+    
+    
+</body>
+
+</html>

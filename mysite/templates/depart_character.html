@@ -1,0 +1,28 @@
+{%load static%}
+<div class="details">
+<div class="imgstyle">
+        <img src="{%static "images/01_01title.jpg"%}">
+    </div>
+
+{% block content %}
+<div class="depar_title">
+	{% for depa in departments %}
+
+	<h4>沿革</h4>	
+	{{depa.reformation|linebreaks}}
+	<h4>設立目標</h4>	
+	{{ depa.goal|linebreaks }}
+	<h4>能力指標</h4>
+	{{ depa.ability_pointer|linebreaks }}
+	<h4>特色</h4>	
+	{{ depa.characteristic|linebreaks}}
+	<h4>系所未來發展</h4>	
+	{{ depa.future_development|linebreaks }}
+	<h4>學生畢業出路</h4>	
+	{{ depa.graduate_job|linebreaks }}
+	{% endfor %}
+</div>
+
+{% endblock %} 
+</div>
+

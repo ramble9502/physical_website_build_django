@@ -1,0 +1,24 @@
+{%load static%}
+<div class="details"  style="background-color:black;background-image:url('/static/images/bg_photo.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;">
+    {% block content %}
+    <div class="depar_title" style="color:white;text-align:center;margin-top:200px;">
+            {% for content in activities%}
+                    <h3 style="border-bottom:1px solid white;">活動名稱：{{content.name}}</h3>
+                    <p>日期：{{content.date}}</p>
+                    {% if content.speaker %}
+                    <p>演講人：{{content.speaker}}</p>
+                    {%endif%}
+                    {%if content.place %}
+                    <p>活動場地：{{content.place}}</p>
+                    {%endif%}
+                    <br>
+                    {% for i in content.academicimage.all %}
+                    <img src="{{i.image.url}}" style="width:22%;">
+                    {%endfor%}
+            {%endfor%}
+           
+    </div>
+    {% endblock %}
+</div>

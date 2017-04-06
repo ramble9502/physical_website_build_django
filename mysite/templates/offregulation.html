@@ -1,0 +1,15 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/01_05title.jpg"%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        {% for offre in offregulation %}
+        <h4>{{offre.name}}</h4>
+        <h3>{{offre.goal}}</h3>
+        <p>{{offre.regulation|linebreaks}}</p>
+        {% endfor %}
+    </div>
+    {% endblock %}
+</div>

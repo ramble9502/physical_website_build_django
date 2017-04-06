@@ -1,0 +1,68 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/03_01title.jpg"%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        {% for tra in transform%}
+            <h3>{{tra.title}}</h3>
+            <table>
+                <tr>
+                    <th rowspan="2">招生名額</th>
+                    <th colspan="2">考試名額</th>
+                    <th rowspan="2">成績採計方式</th>
+                    <th rowspan="2">同分錄取順序</th>
+                </tr>
+                <tr>
+                    <th colspan="1">共同科目</th>
+                    <th colspan="1">專業科目</th>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">{{tra.place|linebreaks}}</td>
+                    <td >{{tra.commonsubject|linebreaks}}</td>
+                    <td >{{tra.profesubject|linebreaks}}</td>
+                    <td>{{tra.achievement|linebreaks}}</td>
+                    <td>{{tra.order|linebreaks}}</td>
+                </tr>
+            </table>
+            <br>
+            {% for tramode in tra.transtestm.all%}
+                <h4>{{tramode.name|linebreaks}}</h4>
+                {% for transtestd in tramode.transtestdetail.all %}
+                <table>
+                    <tr>
+                        <th>項目</th>
+                        <th colspan="2">步驟</th>
+                    </tr>
+                    {% for trad2 in transtestd.transtestdetail2.all  %}
+                        <tr>
+                            <td style="width:100px;">{{trad2.project|linebreaks}}</td>
+                            <td colspan="2" style="text-align: left;">{{trad2.description|linebreaks}}</td>
+                        </tr>
+                    {% endfor%}
+                 </table>
+                {% endfor %}
+               
+            {% endfor %}
+            <h4>轉學考簡章</h4>
+            {% for j in tra.transtestu.all %}
+                <ul>
+                    <li>{{j.filename}}
+                        {% if j.file1 %}
+                        <a href="{{j.file1.url}}" target="_blank">[DOWNLOAD]</a> 
+                        {% endif %}
+                        {% if j.file2 %}
+                        <a href="{{j.file2.url}}" target="_blank">[DOWNLOAD]</a> 
+                        {% endif %}
+                    </li>
+                </ul>
+            {%endfor%}
+            
+        {% endfor %}
+    </div>
+    {% endblock %}
+</div>
+
+
+

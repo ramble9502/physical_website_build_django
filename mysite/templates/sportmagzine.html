@@ -1,0 +1,58 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/04_02title.jpg"%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        {% for regu in regulation %}
+            <h4>《臺南大學體育學報》主題</h4> 
+            {{regu.topic|linebreaks}}
+            <h4> 相關檔案閱覽與下載 </h4>
+            {% for i in regu.regulation.all%}
+                <ul>
+                    <li>{{i.filename}}
+                    {% if i.file %}
+                    <a href="{{i.file.url}}">[DOWNLOAD]</a>
+                    {% endif %}
+                    {% if i.file2 %}
+                    <a href="{{i.file2.url}}">[DOWNLOAD]</a>
+                    {% endif %}
+                    </li>
+                </ul>
+                {%endfor%}
+        {% endfor %}
+        <h4>《南大體育學報》（新版刊物）概覽</h4>
+        {% for mag in magzine %}
+            {% if mag.headline == 1 %}
+            <ul>
+                <li>{{mag.filetitle}}
+                {% if mag.file %}
+                    <a href="{{mag.file.url}}">[DOWNLOAD]</a>
+                {% endif %}
+                {% if mag.file2 %}
+                    <a href="{{mag.file2.url}}">[DOWNLOAD]</a>
+                 {% endif %}
+                </li>
+            </ul>
+            {% endif %}
+        {%endfor%}
+        <h4>《南大體育》（舊版刊物）概覽</h4>
+        {% for mag in magzine %}
+            {% if mag.headline == 2 %}
+            <ul>
+                <li>{{mag.filetitle}}
+                {% if mag.file %}
+                    <a href="{{mag.file.url}}">[DOWNLOAD]</a>
+                {% endif %}
+                {% if mag.file2 %}
+                    <a href="{{mag.file2.url}}">[DOWNLOAD]</a>
+                 {% endif %}
+                </li>
+            </ul>
+            {% endif %}
+        {%endfor%}
+
+    </div>
+    {% endblock %}
+</div>

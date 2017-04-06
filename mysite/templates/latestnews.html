@@ -1,0 +1,35 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/title.jpg"%}">
+    </div>
+    {% include 'scrollinglight.html'%}
+    <p>更新日期：2016年11月22日</p>
+     {%block content%}
+    <table class="latest_news">
+        <thead>
+            <tr>
+                <th colspan="2">最新消息</th>
+                <th><a href="/index">回首頁>></a></th>
+            </tr>
+        </thead>
+        <tbody>
+           
+            {%for lastnew in latestnews%}
+            <tr class='click_toggle'>
+                <td>{{lastnew.create_date}}</td>
+                <td>{{lastnew.title}}</td>
+                <td>系務公告</td>
+            </tr>
+            <tr class="click_content">
+                <td colspan="3"> {{lastnew.content|linebreaks}}
+
+                </td>
+
+            </tr>
+            {%endfor%}
+        
+        </tbody>
+    </table>
+    {%endblock%}
+</div>

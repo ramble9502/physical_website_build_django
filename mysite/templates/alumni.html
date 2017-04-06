@@ -1,0 +1,21 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/07_01title.jpg"%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        {% for alumni in alumni %}
+        <h4>{{alumni.title}}</h4> 
+        <h2>{{alumni.headline}}</h2>
+        <h3>{{alumni.sitetitle}}</h3>
+        {% for i in alumni.alumni.all%}
+        <ul>
+            <li>{{i.title}}</li>
+            {{i.content|linebreaks}}
+        </ul>
+        {%endfor%}
+        {% endfor %}
+    </div>
+    {% endblock %}
+</div>

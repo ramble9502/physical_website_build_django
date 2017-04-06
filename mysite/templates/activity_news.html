@@ -1,0 +1,31 @@
+{%load static%}
+<div class="activity_news">
+    <div>
+        <h4>活動訊息</h4> {%block content%} {%for finspeact in finspeact%}
+        <div class="act_block">
+            <img src="{{finspeact.image.url}}">
+            <span><a  href="/finspeact/{{finspeact.id}}"> {{finspeact.name}}</a></span>
+        </div>
+        
+        {%endfor%} {%endblock%}
+        <h4>相關求職訊息</h4>
+        <ul>
+            <li><a href="http://www.1111.com.tw/job-bank/job-description.asp?eNo=79550175" target="_new_">J1000 網路商城招商專員(男裝/戶外/運動)</a></li>
+            <li>
+                <a href="http://www.1111.com.tw/job-bank/job-description.asp?eNo=78540297">
+                    <li>J1000 網路購物商品企劃(運動休閒)</a>
+                </li>
+                <li><a href="http://www.1111.com.tw/job-bank/job-description.asp?eNo=78311286">舞蹈老師/舞蹈助理教師(全職）</a></li>
+                <li>
+                    <a href="http://www.1111.com.tw/job-bank/job-description.asp?eNo=78249990">
+                        團體課程教練</a>
+                </li>
+                <li><a href="http://www.1111.com.tw/job-bank/job-description.asp?eNo=78249964">私人教練</a></li>
+                <li><a href="http://www.1111.com.tw/job-bank/job-description.asp?eNo=79719630">舞蹈教師</a></li>
+                <li><a href="http://www.1111.com.tw/job-bank/job-description.asp?eNo=77038907">體育社團教練</a></li>
+                <li><a href="http://www.1111.com.tw/job-bank/job-description.asp?eNo=79586307">體育社團教練</a></li>
+                <li><a href="http://www.1111.com.tw/job-bank/job-description.asp?eNo=58873339">體育兼任教師</a></li>
+                <li><a href="http://www.1111.com.tw/job-bank/job-description.asp?eNo=79716081">體育資優生_軟體工程師</a></li>
+        </ul>
+    </div>
+</div>

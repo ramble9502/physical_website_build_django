@@ -1,0 +1,29 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/05_Conference_title.jpg"%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        <h4>研討會相關資訊</h4>
+        {%for sem in seminar%}
+        <ul>
+            <li>{{sem.name}}
+            {%if sem.file1%}
+            <a href="{{sem.file1.url}}">[DOWNLOAD]</a>
+            {%endif%}
+            {%if sem.file2%}
+            <a href="{{sem.file2.url}}">[DOWNLOAD]</a>
+            {%endif%}
+            {%if sem.image%}
+            <a href="{{sem.image.url}}">[IMAGE]</a>
+            {%endif%}
+            {%if sem.link%}
+            <a href="{{sem.link}}">[LINK]</a>
+            {%endif%}
+            </li>
+        </ul>
+        {%endfor%}
+    </div>
+    {% endblock %}
+</div>

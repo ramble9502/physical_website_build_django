@@ -1,0 +1,25 @@
+{%load static%}
+<div class="details">
+    <div class="imgstyle">
+        <img src="{%static "images/01_04title.jpg"%}">
+    </div>
+    {% block content %}
+    <div class="depar_title">
+        {% for course in courseplan %}
+        <h4>{{course.title}}</h4> 
+        {% for i in course.courseupload.all%}
+        <ul>
+            <li>{{i.filename}}
+            {% if i.file %}
+            <a href="{{i.file.url}}">[DOWNLOAD]</a></li>
+            {% endif %}
+            {% if i.file2 %}
+            <a href="{{i.file2.url}}">[DOWNLOAD]</a></li>
+            {% endif %}
+        </ul>
+        {% endfor %}
+       
+        {% endfor %}
+    </div>
+    {% endblock %}
+</div>
