@@ -808,6 +808,9 @@ td:last-child {
 
 /*------------------------------ For IE6 ------------------------------*/
 
+.phylogo2{
+        display: none;
+    }
 
 @media screen and (max-width: 900px){
     #adbox .body{
@@ -826,8 +829,16 @@ td:last-child {
         display: none;
     }
     .phylogo{
-        margin:0 auto;
+        display: none;
+    }
+    .phylogo2{
+        display: block;
+        width: 80%;
+        margin: 0 auto;
         height: 60px;
+    }
+    #header img{
+        width: auto;
     }
 }
 
@@ -846,6 +857,9 @@ td:last-child {
     }
     .phylogo{
         margin:0 auto;
+    }
+    #header img{
+        width: auto;
     }
     .schoollogo{
         display: none;
