@@ -822,11 +822,12 @@ td:last-child {
         width: 100%;
         min-width: 740px;
     }
-    .schoologo{
+    .schoollogo{
         display: none;
     }
     .phylogo{
         margin:0 auto;
+        height: 60px;
     }
 }
 
@@ -845,8 +846,9 @@ td:last-child {
     }
     .phylogo{
         margin:0 auto;
+        height: 60px;
     }
-    .schoologo{
+    .schoollogo{
         display: none;
     }
     #adbox .details{
