@@ -220,6 +220,7 @@ ul {
     font-family: FontAwesome;
     font-style: normal;
     margin-left: 5px;
+    position: static;
 }
 
 
