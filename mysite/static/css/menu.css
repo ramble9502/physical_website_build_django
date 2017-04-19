@@ -24,6 +24,7 @@ nav.menu {
     min-height: 45px;
 }
 
+
 ul {
     padding: 0;
 }
@@ -41,6 +42,7 @@ ul {
     color: #fff;
     display: block;
     padding: 0px 15px;
+    box-sizing: border-box;
 }
 
 .menu > ul li a:hover {
@@ -224,14 +226,61 @@ ul {
 /*MediaQuerys*/
 
 @media (max-width: 600px) {
-    .menu {
-        display: none;
-    }
+    
     .xs-menu li a {
         padding: 0px;
     }
     .xs-menu-cont {
         display: block;
+    }
+}
+.icon{
+    display: none;
+}
+
+@media screen and (max-width: 900px){
+    nav.menu > ul >li{
+        display: none;
+    }
+    a.icon{
+        float: right;
+        display: block;
+        font-size:30px;
+        margin:0 13px;
+        color:white;
+        font-weight:700;
+    }
+}
+@media screen and (max-width: 900px) {
+  .menu.responsive {
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    top: -45px;
+  }
+  .menu.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .menu.responsive li {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+    .activity_news{
+        display: none;
+    }
+    .calenderlinkbar{
+        display: none;
+    }
+    .menu > ul li a,
+    .xs-menu li a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        padding: 0px 5px;
+        box-sizing: border-box;
     }
 }
 
@@ -257,9 +306,11 @@ ul {
 @keyframes fadeIn {
     0% {
         opacity: 0;
+        
     }
     100% {
         opacity: 1;
+        
     }
 }
 

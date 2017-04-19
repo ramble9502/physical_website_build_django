@@ -24,7 +24,7 @@ from DepartIntro.views import departintro, teachgoal, legislation, equipment, of
 from RecruStu.views import sportexcellent, senioradmi, unitestdistribute, transform, masteradmission, manightadmission, liston, trafficmethod
 from Teacher.views import fulltime_teacher, fulldetail, parttime_teacher, partdetail
 from University.views import courseplan, curriculum, studentcorner
-from Master.views import coursearchi, bachelortest, seminar, schoolpaper, graduatedpaper, studygroup
+from Master.views import coursearchi, bachelortest, seminar, schoolpaper, graduatedpaper, studygroup , archeology
 from Masternight.views import ncoursearchi
 from Others.views import honor, alumni, stuaccociation, coursemap
 from Activities.views import activities1, actdetail, activities2, activities3
@@ -74,6 +74,7 @@ urlpatterns = [
     url(r'^activities2/', activities2),
     url(r'^activities3/', activities3),
     url(r'^sportmagzine/', sportmagzine),
+    url(r'^archeology/', archeology),
 ]
 
 if settings.DEBUG:

@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+import datetime
 
 # Create your models here.
 
@@ -157,3 +158,19 @@ class Graduatedpaper_Upload(models.Model):
         verbose_name_plural = "當年度發表資料"
 
 #------------考古題目前沒有
+
+
+class Archeology(models.Model):
+    create_year = models.IntegerField("學年度", default=1)
+    create_date = models.DateField("公布日期", default=datetime.date.today)
+    file = models.FileField("考古題檔案1", upload_to="master/file", blank=True)
+    file2 = models.FileField("考古題檔案2", upload_to="master/file", blank=True)
+    archtitle = models.CharField("考古題名稱", max_length=50)
+
+    class Meta:
+        db_table = "Archeology"
+        verbose_name = "上傳考古題"
+        verbose_name_plural = "考古題"
+
+    def __unicode__(self):
+        return self.archtitle

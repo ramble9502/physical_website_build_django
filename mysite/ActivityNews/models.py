@@ -89,6 +89,35 @@ class Finished_Special_Activity(models.Model):
         return self.name
 
 
+class Linkindex(models.Model):
+    jobtitle = models.CharField("相關求職訊息標題", max_length=100)
+    link = models.URLField("求職連結", blank=True)
+    create_date = models.DateField("公布日期", default=datetime.date.today)
+
+    class Meta:
+        db_table = "Linkindex"
+        verbose_name = "上傳求職訊息"
+        verbose_name_plural = "求職訊息"
+
+    def __unicode__(self):
+        return self.jobtitle
+
+
+class Linkact(models.Model):
+    actitle = models.CharField('相關連結名稱', max_length=100)
+    actlink = models.URLField('連結', blank=True)
+    actimage = models.ImageField('圖片', upload_to="activitynews/image")
+    create_date = models.DateField("公布日期", default=datetime.date.today)
+
+    class Meta:
+        db_table = "Linkact"
+        verbose_name = "上傳相關連結"
+        verbose_name_plural = "相關連結"
+
+    def __unicode__(self):
+        return self.actitle
+
+
 class Marqueecontrol(models.Model):
     content = models.CharField("跑馬燈內容", max_length=100)
 
