@@ -831,11 +831,8 @@ td:last-child {
     .phylogo{
         display: none;
     }
-    .phylogo2{
-        display: block;
-        width: 80%;
-        margin: 0 auto;
-        height: 60px;
+    #header img{
+        width: 90%;
     }
     #header img{
         width: auto;
@@ -859,7 +856,7 @@ td:last-child {
         margin:0 auto;
     }
     #header img{
-        width: auto;
+        width: 90%;
     }
     .schoollogo{
         display: none;
