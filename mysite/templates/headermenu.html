@@ -1,12 +1,15 @@
 {%load static%}
 <div id="header">
-        <a href="/index" id="logo"><img src="{%static "images/logo2.gif"%}" alt="National_Tainan_university" /></a>
+        <a href="/index" id="logo">
+        <img src="{%static "images/logo2.gif"%}" alt="National_Tainan_university" class="schoollogo" />
+        <img src="{%static "images/phylogo.png"%}" class="phylogo">
+        </a>
         <div class="container">
-            <nav class="menu">
+            <nav class="menu" id="myMenu">
                 <ul>
                     <li class="drop-down">
                         <a href="#">系統簡介</a>
-                        <div class="mega-menu faseIn animated">
+                        <div class="mega-menu fadeIn animated">
                             <div class="menublock">
                                 <a href="/depart_character">系所特色</a>
                                 <a href="/teachgoal">教學指標</a>
@@ -19,7 +22,7 @@
                     </li>
                     <li class="drop-down">
                         <a href="#">師資成員</a>
-                        <div class="mega-menu faseIn animated">
+                        <div class="mega-menu fadeIn animated">
                             <div class="menublock">
                                 <a href="/fullteacher">專任師資</a>
                                 <a href="/partteacher">兼任師資</a>
@@ -71,7 +74,7 @@
                     </li>
                     <li class="drop-down">
                         <a href="#">大學部</a>
-                        <div class="mega-menu faseIn animated">
+                        <div class="mega-menu fadeIn animated">
                             <div class="menublock">
                                 <a href="/courseplan">課程規劃</a>
                                 <a href="/curriculum">學期課表</a>
@@ -81,21 +84,33 @@
                     </li>
                     <li class="drop-down">
                         <a href="#">碩士班</a>
-                        <div class="mega-menu faseIn animated">
+                        <div class="mega-menu fadeIn animated">
                             <div class="menublock">
+                            <ul>
+                            <li>
                                 <a href="/coursearchi">課程架構。修業要點</a>
+                            </li>
+                            <li>
                                 <a href="/bachelortest">學位考試表格下載</a>
+                            </li>
+                            <li>
                                 <a href="/seminar">研討資訊</a>
+                            </li>
+                            <li>
                                 <a href="/studygroup">研究所讀書會</a>
-                                <a href="/schoolpaper">在校論文發表</a>
-                                <a href="/graduatedpaper">畢業論文發表</a>
-                                <a href="#">考古題</a>
+                            </li>
+                            </ul>
+                            <ul>
+                                <li><a href="/schoolpaper">在校論文發表</a></li>
+                                <li><a href="/graduatedpaper">畢業論文發表</a></li>
+                                <li><a href="/archeology">考古題</a></li>
+                            </ul>
                             </div>
                         </div>
                     </li>
                     <li class="drop-down">
                         <a href="#">碩專班</a>
-                        <div class="mega-menu faseIn animated">
+                        <div class="mega-menu fadeIn animated">
                             <div class="menublock">
                                 <a href="/ncoursearchi">課程架構。修業要點</a>
                                 <a href="/bachelortest">學位考試表格下載</a>
@@ -105,7 +120,7 @@
                     </li>
                     <li class="drop-down">
                         <a href="#">活動集錦</a>
-                        <div class="mega-menu faseIn animated">
+                        <div class="mega-menu fadeIn animated">
                             <div class="menublock">
                                 <a href="/activities1">研討會與研習</a>
                                 <a href="/activities2">專題演講</a>
@@ -127,6 +142,7 @@
                         <li>
                             <a href="/alumni">系友會</a>
                         </li>
+                    <a href="javascript:void(0);"  class="icon" onclick="myFunction()">&#9776;</a>
                 </ul>
             </nav>
         </div>
