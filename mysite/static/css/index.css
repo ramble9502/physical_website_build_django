@@ -146,7 +146,7 @@ img {
 
 #adbox {
     background-color: #ffffff;
-
+    min-height: 900px;
 }
 
 #adbox p {
@@ -173,7 +173,7 @@ img {
 }
 
 #adbox div.calenderlinkbar{
-    background-color: #f7f7f7;
+	background-color: #f7f7f7;
     border: 1px solid #cec596;
     border-radius: 5px;
     padding: 5px;
@@ -192,7 +192,7 @@ img {
     text-align: center;
 }
 #adbox div.calenderlinkbar>div{
-    background-color: #fff;
+	background-color: #fff;
     border: 0;
     border-radius: 0;
     width: auto;
@@ -210,7 +210,7 @@ img {
     height: 135px;
 }
 a{
-    text-decoration: none;
+	text-decoration: none;
     color: black;
 }
 .act_block>span {
@@ -270,6 +270,7 @@ a{
     box-sizing: border-box;
     border: 5px solid #FFF8EE;
     padding-bottom: 50px;
+    min-height: 850px;
 }
 
 #adbox .details .imgstyle {
@@ -371,10 +372,10 @@ table.training_news thead tr:first-child {
 }
 
 .latest_news thead tr th a{
-    color: brown;
+	color: brown;
 }
 .training_news thead tr th a{
-    color: brown;
+	color: brown;
 }
 
 th:first-child,
@@ -416,12 +417,12 @@ td:last-child {
 }
 
 .click_content{
-    display: none;
-    background-color: #F9FAF7;
-    padding: 15px;
+	display: none;
+	background-color: #F9FAF7;
+	padding: 15px;
 }
 .click_content>td{
-    text-align: left;
+	text-align: left;
 }
 
 
@@ -825,4 +826,37 @@ td:last-child {
     .phylogo{
         margin:0 3%;
     }
+}
+
+@media screen and (max-width: 500px){
+    #adbox .body{
+        width: 100%;
+        min-width: auto;
+    }
+    #footer{
+        width: 100%;
+        min-width: auto;
+    }
+    #header{
+        width: 100%;
+        min-width: auto;
+    }
+    #phylogo{
+        margin:0 auto;
+    }
+    #schoologo{
+        display: none;
+    }
+    #adbox .details{
+        width: 100%;
+    }
+    #adbox .details .imgstyle{
+        height: auto;
+    }
+    table.latest_news , table.training_news{
+        width: 95%;
+        font-size: 15px;
+
+    }
+
 }
