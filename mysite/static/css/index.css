@@ -822,9 +822,11 @@ td:last-child {
         width: 100%;
         min-width: 740px;
     }
-    
+    .schoologo{
+        display: none;
+    }
     .phylogo{
-        margin:0 3%;
+        margin:0 auto;
     }
 }
 
@@ -841,10 +843,10 @@ td:last-child {
         width: 100%;
         min-width: auto;
     }
-    #phylogo{
+    .phylogo{
         margin:0 auto;
     }
-    #schoologo{
+    .schoologo{
         display: none;
     }
     #adbox .details{
@@ -857,6 +859,9 @@ td:last-child {
         width: 95%;
         font-size: 15px;
 
+    }
+    #adbox .details > .scrolling-limit{
+        width: 100%;
     }
 
 }
