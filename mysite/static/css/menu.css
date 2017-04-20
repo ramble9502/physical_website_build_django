@@ -226,7 +226,7 @@ ul {
 
 /*MediaQuerys*/
 
-@media (max-width: 600px) {
+@media (max-width: 740px) {
     
     .xs-menu li a {
         padding: 0px;
@@ -321,7 +321,7 @@ ul {
     z-index: 99;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 740px){
     .menublock{
         font-size: 14px;
     }
