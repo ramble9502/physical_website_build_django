@@ -37,7 +37,7 @@ urlpatterns = [
     url(r'^latestnews/', latestnews),
     url(r'^workshopnews/', workshopnews),
     url(r'^depart_character/', departintro),
-    url(r'^index/', index),
+    url(r'^$', index),
     url(r'^teachgoal/', teachgoal),
     url(r'^finspeact/(?P<id>\d+)/$', finspeact),
     url(r'^legistlate/', legislation),
