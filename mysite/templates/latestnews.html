@@ -23,7 +23,17 @@
             </tr>
             <tr class="click_content">
                 <td colspan="3"> {{lastnew.content|linebreaks}}
-
+                    <p style="font-weight:bold;">相關文件下載:</p>
+                        {% for i in lastnew.latestnews.all%}
+                    <p style="font-weight:bold;">
+                        {{i.filename}}
+                        {% if i.file %}
+                        <a style="color:red;" href="{{i.file.url}}" target="_blank">[DOWNLOAD]</a>
+                        {%endif%} 
+                        {% if i.file2 %}
+                        <a  style="color:red;" href="{{i.file2.url}}" target="_blank">[DOWNLOAD]</a>
+                        {%endif%} 
+                    </p>
                 </td>
 
             </tr>
