@@ -2,14 +2,16 @@
 
 html {
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../images/background-orange.jpg);
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    background-repeat: no-repeat;
+    min-height: 100%;
 }
 
 body {
-    background-image: url(../images/background-orange.jpg);
-    background-size: cover;
     margin: 0;
-    width: 100%;
-    background-repeat: no-repeat;
 }
 
 img {
@@ -29,12 +31,19 @@ img {
 #header img {
     width: 300px;
 }
-
+.schoollogo{
+    height: 65px;
+}
+.phylogo{
+    margin: 0 15%;
+    margin-bottom: 15px;
+    height: 85px;
+}
 
 /** Logo **/
 
 #logo {
-    display: block;
+    display: flex;
 }
 
 
@@ -137,6 +146,7 @@ img {
 
 #adbox {
     background-color: #ffffff;
+    min-height: 900px;
 }
 
 #adbox p {
@@ -148,6 +158,8 @@ img {
     margin: 0 auto;
     padding-top: 30px;
     display: flex;
+    background-color: #ffffff;
+    min-height: 700px;
 }
 
 #adbox div.activity_news {
@@ -254,10 +266,11 @@ a{
 #adbox .details {
     color: #2f2f2f;
     width: 740px;
-    margin: 0 10px;
+    margin: 0 auto;
     box-sizing: border-box;
     border: 5px solid #FFF8EE;
     padding-bottom: 50px;
+    min-height: 850px;
 }
 
 #adbox .details .imgstyle {
@@ -773,6 +786,7 @@ td:last-child {
     width: 1200px;
     margin: 0 auto;
     padding: 20px 10px;
+    box-sizing: border-box;
     text-align: center;
 }
 
@@ -793,3 +807,76 @@ td:last-child {
 
 
 /*------------------------------ For IE6 ------------------------------*/
+
+.phylogo2{
+        display: none;
+    }
+
+@media screen and (max-width: 900px){
+    #adbox .body{
+        width: 100%;
+        min-width: 740px;
+    }
+    #footer{
+        width: 100%;
+        min-width: 740px;
+    }
+    #header{
+        width: 100%;
+        min-width: 740px;
+    }
+    .schoollogo{
+        display: none;
+    }
+    .phylogo{
+        display: none;
+    }
+    .phylogo2{
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        height: 60px;
+    }
+    #header img{
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 500px){
+    #adbox .body{
+        width: 100%;
+        min-width: auto;
+    }
+    #footer{
+        width: 100%;
+        min-width: auto;
+    }
+    #header{
+        width: 100%;
+        min-width: auto;
+    }
+    .phylogo{
+        margin:0 auto;
+    }
+    #header img{
+        width: auto;
+    }
+    .schoollogo{
+        display: none;
+    }
+    #adbox .details{
+        width: 100%;
+    }
+    #adbox .details .imgstyle{
+        height: auto;
+    }
+    table.latest_news , table.training_news{
+        width: 95%;
+        font-size: 15px;
+
+    }
+    #adbox .details > .scrolling-limit{
+        width: 100%;
+    }
+
+}
