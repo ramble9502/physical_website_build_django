@@ -842,7 +842,7 @@ td:last-child {
     }
 }
 
-@media screen and (max-width: 740px){
+@media screen and (max-width: 500px){
     #adbox .body{
         width: 100%;
         min-width: auto;

@@ -11,8 +11,11 @@ def index(request):
     latestnews = Latest_News.objects.order_by('-create_date')[0:10]
     workshopnews = WorkShop_News.objects.order_by('-create_date')[0:10]
     finspeact = Finished_Special_Activity.objects.order_by('-create_date')[0:3]
+    linkact = Linkact.objects.order_by('-create_date')[0:3]
+    linkindex = Linkindex.objects.order_by('-create_date')[0:10]
     extra_context = {'marqueecontrol': marqueecontrol, 'latestnews': latestnews,
-                     'workshopnews': workshopnews, 'finspeact': finspeact}
+                     'workshopnews': workshopnews, 'finspeact': finspeact,
+                     'linkact': linkact, 'linkindex': linkindex}
     return render_to_response('index.html', extra_context)
 
 
@@ -21,7 +24,10 @@ def finspeact(request, id):
         finspeact2 = Finished_Special_Activity.objects.filter(id=id)
         finspeact = Finished_Special_Activity.objects.order_by(
             '-create_date')[0:3]
-        extra_context = {'finspeact': finspeact, 'finspeact2': finspeact2}
+        linkact = Linkact.objects.order_by('-create_date')[0:3]
+        linkindex = Linkindex.objects.order_by('-create_date')[0:10]
+        extra_context = {'finspeact': finspeact, 'finspeact2': finspeact2,
+                         'linkact': linkact, 'linkindex': linkindex}
         return render_to_response('finspeactindex.html', extra_context)
     else:
         return redirect('/index')
@@ -30,16 +36,22 @@ def finspeact(request, id):
 def latestnews(request):
     marqueecontrol = Marqueecontrol.objects.all()
     latestnews = Latest_News.objects.order_by('-create_date')
+    linkact = Linkact.objects.order_by('-create_date')[0:3]
+    linkindex = Linkindex.objects.order_by('-create_date')[0:10]
     finspeact = Finished_Special_Activity.objects.order_by('-create_date')[0:3]
     extra_context = {'marqueecontrol': marqueecontrol,
-                     'latestnews': latestnews, 'finspeact': finspeact}
+                     'latestnews': latestnews, 'finspeact': finspeact,
+                     'linkact': linkact, 'linkindex': linkindex}
     return render_to_response('latestnewsindex.html', extra_context)
 
 
 def workshopnews(request):
     marqueecontrol = Marqueecontrol.objects.all()
+    linkact = Linkact.objects.order_by('-create_date')[0:3]
+    linkindex = Linkindex.objects.order_by('-create_date')[0:10]
     workshopnews = WorkShop_News.objects.order_by('-create_date')
     finspeact = Finished_Special_Activity.objects.order_by('-create_date')[0:3]
     extra_context = {'marqueecontrol': marqueecontrol,
-                     'workshopnews': workshopnews, 'finspeact': finspeact}
+                     'workshopnews': workshopnews, 'finspeact': finspeact,
+                     'linkact': linkact, 'linkindex': linkindex}
     return render_to_response('workshopnewsindex.html', extra_context)
