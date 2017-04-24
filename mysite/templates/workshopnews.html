@@ -10,7 +10,7 @@
         <thead>
             <tr>
                 <th colspan="2">研習訊息</th>
-                <th><a href="/">回首頁>></a></th>
+                <th><a href="/index">回首頁>></a></th>
             </tr>
         </thead>
         <tbody>
@@ -22,7 +22,17 @@
             </tr>
             <tr class="click_content">
                 <td colspan="3"> {{worknew.content|linebreaks}}
-                
+                <p style="font-weight:bold;">相關文件下載:</p>
+                {% for i in worknew.workshop.all%}
+                <p style="font-weight:bold;">
+                        {{i.filename}}
+                        {% if i.file %}
+                        <a style="color:red;" href="{{i.file.url}}" target="_blank">[DOWNLOAD]</a>
+                        {%endif%} 
+                        {% if i.file2 %}
+                        <a  style="color:red;" href="{{i.file2.url}}" target="_blank">[DOWNLOAD]</a>
+                        {%endif%} 
+                </p>
                 </td>
 
             </tr>
