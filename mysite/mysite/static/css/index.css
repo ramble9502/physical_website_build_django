@@ -838,11 +838,11 @@ td:last-child {
         height: 60px;
     }
     #header img{
-        width: auto;
+        width: 90%;
     }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 740px){
     #adbox .body{
         width: 100%;
         min-width: auto;
@@ -855,11 +855,17 @@ td:last-child {
         width: 100%;
         min-width: auto;
     }
+    .phylogo2{
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        height: 60px;
+    }
     .phylogo{
         margin:0 auto;
     }
     #header img{
-        width: auto;
+        width: 90%;
     }
     .schoollogo{
         display: none;
