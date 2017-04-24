@@ -6,15 +6,15 @@
     {% include 'scrollinglight.html'%}
     <p>更新日期：2016年11月22日</p>
      {%block content%}
-    <table class="training_news">
+    <table class="latest_news">
         <thead>
             <tr>
-                <th colspan="2">研習訊息</th>
-                <th><a href="/index">回首頁>></a></th>
+                <th colspan="2">最新消息</th>
+                <th><a href="/latestnews">顯示更多訊息>></a></th>
             </tr>
         </thead>
         <tbody>
-            {%for worknew in workshopnews%}
+           {%for worknew in workshopnews%}
             <tr class='click_toggle'>
                 <td>{{worknew.create_date}}</td>
                 <td>{{worknew.title}}</td>
@@ -33,11 +33,11 @@
                         <a  style="color:red;" href="{{i.file2.url}}" target="_blank">[DOWNLOAD]</a>
                         {%endif%} 
                 </p>
+                {%endfor%}
                 </td>
 
             </tr>
             {%endfor%}
-            
         </tbody>
     </table>
     {%endblock%}
