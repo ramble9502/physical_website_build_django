@@ -66,4 +66,6 @@ sudo chown -R www-data:www-data media_cdn
 
 sudo a2ensite sitename 或 sudo a2ensite sitename.conf            
 
+相關參考內容 http://www.ziqiangxuetang.com/django/django-deploy.html
+
 
