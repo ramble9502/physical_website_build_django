@@ -36,5 +36,8 @@ class Parttime_Teacher_Class(admin.ModelAdmin):
     inlines = [Periodical2_Class, Seminar2_Class, Book2_Class]
 
 
+admin.site.register(Yearsigned)
+
+
 admin.site.register(Fulltime_Teacher, Fulltime_Teacher_Class)
 admin.site.register(Parttime_Teacher, Parttime_Teacher_Class)

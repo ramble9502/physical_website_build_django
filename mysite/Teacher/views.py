@@ -31,11 +31,11 @@ def fulldetail(request, id):
 
 
 def parttime_teacher(request):
-    parttime_teacher = Parttime_Teacher.objects.all()
+    yearsigned = Yearsigned.objects.order_by('-year')[0:5]
     linkact = Linkact.objects.order_by('-create_date')[0:3]
     linkindex = Linkindex.objects.order_by('-create_date')[0:10]
     finspeact = Finished_Special_Activity.objects.order_by('-create_date')[0:3]
-    extra_context = {'parttime_teacher': parttime_teacher,
+    extra_context = {'yearsigned': yearsigned,
                      'finspeact': finspeact, 'linkact': linkact, 'linkindex': linkindex}
     return render_to_response('partteacherindex.html', extra_context)
 

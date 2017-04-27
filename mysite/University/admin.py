@@ -28,3 +28,4 @@ class StudentCorner_Class(admin.ModelAdmin):
 admin.site.register(StudentCorner,StudentCorner_Class)
 admin.site.register(Curriculum2,Curriculum_Class)		
 admin.site.register(CoursePlan, CoursePlan_Class)
+admin.site.register(Crossdomain)

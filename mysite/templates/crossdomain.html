@@ -1,0 +1,21 @@
+{%load static%}
+<div class="details">
+    
+    {% block content %}
+    <div class="depar_title">
+        <h4>跨領域學分學程</h4> 
+        {% for crossdomain in crossdomain %}
+        <ul>
+            <li>{{crossdomain.crosstitle}}
+            {% if crossdomain.file %}
+            <a href="{{crossdomain.file.url}}">[DOWNLOAD]</a></li>
+            {% endif %}
+            {% if crossdomain.file2 %}
+            <a href="{{crossdomain.file2.url}}">[DOWNLOAD]</a></li>
+            {% endif %}
+        </ul>
+       
+        {% endfor %}
+    </div>
+    {% endblock %}
+</div>

@@ -7,7 +7,7 @@ from django.shortcuts import render_to_response
 
 def coursearchi(request):
     finspeact = Finished_Special_Activity.objects.order_by('-create_date')[0:3]
-    coursearchi = Course_Architecture.objects.all()
+    coursearchi = Course_Architecture.objects.all()[0:10]
     linkact = Linkact.objects.order_by('-create_date')[0:3]
     linkindex = Linkindex.objects.order_by('-create_date')[0:10]
     extra_context = {'finspeact': finspeact, 'coursearchi': coursearchi,
@@ -59,7 +59,7 @@ def studygroup(request):
     finspeact = Finished_Special_Activity.objects.order_by('-create_date')[0:3]
     linkact = Linkact.objects.order_by('-create_date')[0:3]
     linkindex = Linkindex.objects.order_by('-create_date')[0:10]
-    studygroup = Study_Group.objects.order_by('-year')
+    studygroup = Study_Group.objects.order_by('-year')[0:10]
     extra_context = {'finspeact': finspeact, 'studygroup': studygroup,
                      'linkact': linkact, 'linkindex': linkindex}
     return render_to_response('studygroupindex.html', extra_context)
@@ -73,3 +73,13 @@ def archeology(request):
     extra_context = {'finspeact': finspeact, 'archeology': archeology,
                      'linkact': linkact, 'linkindex': linkindex}
     return render_to_response('archeologyindex.html', extra_context)
+
+
+def teachmaster(request):
+    finspeact = Finished_Special_Activity.objects.order_by('-create_date')[0:3]
+    linkact = Linkact.objects.order_by('-create_date')[0:3]
+    linkindex = Linkindex.objects.order_by('-create_date')[0:10]
+    teachmaster = Teachemaster.objects.all()[0:3]
+    extra_context = {'finspeact': finspeact, 'teachmaster': teachmaster,
+                     'linkact': linkact, 'linkindex': linkindex}
+    return render_to_response('teachmasterindex.html', extra_context)

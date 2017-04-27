@@ -69,24 +69,14 @@ class Traffic_Information_Class(admin.ModelAdmin):
     inlines = [Traffic_Method]
 
 
-class Transfer_Test_mode(RulesAdmin_T):
-    model = Transfer_Test_mode
-
 
 class Transfer_Test_Upload(admin.TabularInline):
     model = Transfer_Test_Upload
 
 
 class Transfer_Test_Class(RulesAdmin):
-    inlines = [Transfer_Test_mode, Transfer_Test_Upload]
+    inlines = [Transfer_Test_Upload]
 
-
-class Transfer_Test_Detail2(admin.TabularInline):
-    model=Transfer_Test_Detail2
-
-class Transfer_Test_Detail_Class(admin.ModelAdmin):
-    inlines=[Transfer_Test_Detail2]
-        
 
 class List_Upload(admin.TabularInline):
     model=List_Upload
@@ -108,5 +98,5 @@ admin.site.register(Transfer_Test, Transfer_Test_Class)
 admin.site.register(Master_Admission, Master_Admission_Class)
 admin.site.register(Master_night2, Master_night_Class)
 admin.site.register(Traffic_Information, Traffic_Information_Class)
-admin.site.register(Transfer_Test_Detail,Transfer_Test_Detail_Class)
+admin.site.register(Transfer_Test_Detail)
 admin.site.register(List,List_Class)

@@ -45,11 +45,12 @@ class Course_Architecture_Upload(Upload_File):
 
 class Bachelor_Test(models.Model):
     FILECLASSS_CHOICES = (
-        (1, '學位考試相關檔案下載'),
-        (2, '研究計畫口試相關檔案'),
-        (3, '論文口試相關檔案'),
+        ('學位考試相關檔案下載', '學位考試相關檔案下載'),
+        ('研究計畫口試相關檔案', '研究計畫口試相關檔案'),
+        ('論文口試相關檔案', '論文口試相關檔案'),
     )
-    filetitle = models.IntegerField("檔案類別", choices=FILECLASSS_CHOICES)
+    filetitle = models.CharField(
+        "檔案類別", choices=FILECLASSS_CHOICES, max_length=50)
 
     class Meta:
         db_table = "Bachelor_Test"
@@ -57,7 +58,7 @@ class Bachelor_Test(models.Model):
         verbose_name_plural = "學位考試表格下載"
 
     def __unicode__(self):
-        return str(self.filetitle)
+        return self.filetitle
 
 
 class Bachelor_Test_Upload(Upload_File):
@@ -174,3 +175,29 @@ class Archeology(models.Model):
 
     def __unicode__(self):
         return self.archtitle
+
+
+class Teachemaster(models.Model):
+    FILECLASSS_CHOICES = (
+        ('教學碩士班學位考試相關檔案下載', '教學碩士班學位考試相關檔案下載'),
+        ('教學碩士班研究計畫口試相關檔案', '教學碩士班研究計畫口試相關檔案'),
+        ('教學碩士班論文口試相關檔案', '教學碩士班論文口試相關檔案'),
+    )
+    filetype = models.CharField(
+        "檔案類別", choices=FILECLASSS_CHOICES, max_length=50)
+
+    class Meta:
+        db_table = "Teachemaster"
+        verbose_name = "上傳教學碩士班表格"
+        verbose_name_plural = "教學碩士班表格"
+
+    def __unicode__(self):
+        return self.filetype
+
+
+class Teachemaster_Upload(Upload_File):
+    contact = models.ForeignKey(Teachemaster, related_name="teachmaster")
+
+    class Meta:
+        db_table = "Teachemaster_Upload"
+        verbose_name = "教學碩士班表格檔案"

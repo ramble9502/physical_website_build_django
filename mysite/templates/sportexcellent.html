@@ -3,10 +3,16 @@
     <div class="imgstyle">
         <img src="{%static "images/03_01title.jpg"%}">
     </div>
+    
     {% block content %}
     <div class="depar_title">
+        <select  onchange="location = this.options[this.selectedIndex].value;">
         {% for spor in sportexcellent %}
-        <h4>{{spor.title}}</h4> 
+            <option value="#spor{{spor.id}}">{{spor.title}}</option>
+        {%endfor%}
+        </select>
+        {% for spor in sportexcellent %}
+        <h4 id="spor{{spor.id}}">{{spor.title}}</h4> 
         {% for i in spor.sportad.all%}
         <ul>
             <li>{{i.filename}}</li>

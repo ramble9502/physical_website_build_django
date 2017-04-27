@@ -4,20 +4,35 @@
         <img src="{%static "images/02_04title.jpg "%}">
     </div>
     {% block content %}
-    <div class="depar_title">
-        {% for tea in parttime_teacher%}
-        <div class="teaintroduce" style="width:48%; border:1px solid #C0C0C0; background-color:#F4F4F4; float:left; display:flex;margin-left:1%;">
-        <div class="teaimage" style="width:30%;height:70px;overflow: hidden;padding:0 10px;box-sizing:border-box;margin:10px 0;">
-            <img src="{{tea.photo.url}}" alt="img" style="width:70px;">
+        <div class="depar_title">
+        <select  onchange="location = this.options[this.selectedIndex].value;">
+        {%for yearsigned in yearsigned%}
+        <option value="#yearsigned{{yearsigned.id}}">{{yearsigned.title}}</option>
+        {%endfor%}
+        </select>
+        {%for yearsigned in yearsigned%}
+            <h4 id="yearsigned{{yearsigned.id}}">{{yearsigned.title}}</h4>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>職稱</th>
+                        <th>姓名</th>
+                        <th>最高學歷</th>
+                        <th >專長</th>
+                    </tr>
+                    {% for partteacher in yearsigned.contact.all %}
+                    <tr>
+                        <td><a href="/partdetail/{{partteacher.id}}" style="color:blue;">{{partteacher.name}}</a></td>
+                        <td>{{partteacher.job}}</td>
+                        <td>{{partteacher.education}}</td>
+                        <td>{{partteacher.specialty}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        {%endfor%}
         </div>
-        <div class="teainformation" style="width:70%; text-align:center;padding:0 10px;box-sizing:border-box;margin:10px 0;"> 
-            <div style="font-size:20px;font-weight:700;">{{tea.name}}</div>
-            <div style="font-size:14px;">{{tea.job}},分機 : {{tea.telephone_extension}}</div>
-            <div style="font-size:14px;">最新年度 : {{tea.year}}</div>
-            <div style="font-size:12px;"><a href="/partdetail/{{tea.id}}" style="color:red;">了解更多→</a></div>
-        </div>
-        </div>
-        {% endfor %}
-    </div>
+
     {% endblock %}
 </div>
+

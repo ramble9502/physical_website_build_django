@@ -5,8 +5,13 @@
     </div>
     {% block content %}
     <div class="depar_title">
+    <select  onchange="location = this.options[this.selectedIndex].value;">
         {% for list in liston %}
-        <h4>{{list.title}}</h4>
+        <option value="#list{{list.id}}">{{list.title}}</option>
+        {%endfor%}
+    </select>
+        {% for list in liston %}
+        <h4 id="list{{list.id}}">{{list.title}}</h4>
         <p>{{list.discription|linebreaks}}</p> 
         {% for i in list.listupload.all%}
         <ul>

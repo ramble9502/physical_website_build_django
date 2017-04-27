@@ -7,7 +7,7 @@ from django.shortcuts import render_to_response
 
 def sportexcellent(request):
     sportexcellent = Sport_Excellent_Admission.objects.order_by(
-        '-created_time')
+        '-created_time')[0:10]
     finspeact = Finished_Special_Activity.objects.order_by('-create_date')[0:3]
     linkact = Linkact.objects.order_by('-create_date')[0:3]
     linkindex = Linkindex.objects.order_by('-create_date')[0:10]
@@ -18,7 +18,7 @@ def sportexcellent(request):
 
 def senioradmi(request):
     finspeact = Finished_Special_Activity.objects.order_by('-create_date')[0:3]
-    senioradmi = Senior_Admission.objects.all()
+    senioradmi = Senior_Admission.objects.all()[0:10]
     linkact = Linkact.objects.order_by('-create_date')[0:3]
     linkindex = Linkindex.objects.order_by('-create_date')[0:10]
     extra_context = {'finspeact': finspeact, 'senioradmi': senioradmi,
@@ -28,7 +28,7 @@ def senioradmi(request):
 
 def unitestdistribute(request):
     finspeact = Finished_Special_Activity.objects.order_by('-create_date')[0:3]
-    unitestdistribute = Senior_Distribution.objects.all()
+    unitestdistribute = Senior_Distribution.objects.all()[0:10]
     linkact = Linkact.objects.order_by('-create_date')[0:3]
     linkindex = Linkindex.objects.order_by('-create_date')[0:10]
     extra_context = {'finspeact': finspeact,
@@ -49,7 +49,7 @@ def transform(request):
 
 def masteradmission(request):
     finspeact = Finished_Special_Activity.objects.order_by('-create_date')[0:3]
-    masteradmission = Master_Admission.objects.order_by('-created_time')
+    masteradmission = Master_Admission.objects.order_by('-created_time')[0:10]
     linkact = Linkact.objects.order_by('-create_date')[0:3]
     linkindex = Linkindex.objects.order_by('-create_date')[0:10]
     extra_context = {'finspeact': finspeact,
@@ -60,7 +60,7 @@ def masteradmission(request):
 
 def manightadmission(request):
     finspeact = Finished_Special_Activity.objects.order_by('-create_date')[0:3]
-    manightadmission = Master_night2.objects.order_by('-created_time')
+    manightadmission = Master_night2.objects.order_by('-created_time')[0:10]
     linkact = Linkact.objects.order_by('-create_date')[0:3]
     linkindex = Linkindex.objects.order_by('-create_date')[0:10]
     extra_context = {'finspeact': finspeact,
@@ -71,7 +71,7 @@ def manightadmission(request):
 
 def liston(request):
     finspeact = Finished_Special_Activity.objects.order_by('-create_date')[0:3]
-    liston = List.objects.order_by('-title')
+    liston = List.objects.order_by('-title')[0:10]
     linkact = Linkact.objects.order_by('-create_date')[0:3]
     linkindex = Linkindex.objects.order_by('-create_date')[0:10]
     extra_context = {'finspeact': finspeact, 'liston': liston,

@@ -5,10 +5,16 @@
     </div>
     {% block content %}
     <div class="depar_title">
-
+        <select  onchange="location = this.options[this.selectedIndex].value;">
+            {%for act in activities%}
+            {% if act.filetitle == "研討會與研習"%}
+                <option value="#act{{act.id}}">{{act.year}}</option>
+            {%endif%}
+            {%endfor%}
+        </select>
         {%for act in activities%}
             {% if act.filetitle == "研討會與研習"%}
-                <h4>{{act.year}}</h4>
+                <h4 id="act{{act.id}}">{{act.year}}</h4>
                 {% for content in act.activities.all%}
                 <table>
                     <tr>

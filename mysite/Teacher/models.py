@@ -109,3 +109,16 @@ class Book2(models.Model):
     class Meta:
         db_table = "Book2"
         verbose_name_plural = "專書"
+
+class Yearsigned(models.Model):
+    year=models.IntegerField("(數字)學年度：年度+學期")
+    title=models.CharField("學年度：",max_length=50)
+    contact=models.ManyToManyField(Parttime_Teacher)
+    def __unicode__(self):
+        return self.title
+    class Meta:
+        db_table="Yearsigned"
+        verbose_name_plural="學年度兼任老師名單"
+        verbose_name="上傳學年度兼任老師名單"
+
+        

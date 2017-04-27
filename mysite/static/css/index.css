@@ -144,7 +144,7 @@ img {
 
 /** Adbox **/
 
-#adbox {
+#adbox { 
     background-color: #ffffff;
     min-height: 900px;
 }
@@ -204,10 +204,10 @@ img {
     text-align: center;
 }
 .act_block>img {
-    width: 80%;
-    margin: 0 10%;
+    width: 70%;
+    margin: 0 15%;
     border-radius: 10px;
-    height: 135px;
+    height: 90px;
 }
 a{
 	text-decoration: none;
@@ -284,19 +284,18 @@ a{
 }
 
 #adbox p {
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 #adbox .details > .scrolling-limit {
     width: 700px;
     height: 40px;
     margin: 15px auto;
-    background-color: #D8E2E5;
     overflow: hidden;
     white-space: nowrap;
     font-size: 20px;
     line-height: 40px;
-    border: 1px solid;
+    color: darkred;
 }
 
 #adbox .details >.scrolling-limit >.scrolling {
@@ -378,10 +377,14 @@ table.training_news thead tr:first-child {
 	color: brown;
 }
 
-th:first-child,
-td:first-child {
+.latest_news  th:first-child,td:first-child {
     padding: 0 15px 0 20px;
 }
+
+.training_news th:first-child,td:first-child {
+    padding: 0 15px 0 20px;
+}
+
 
 table.latest_news thead tr:last-child th {
     border-bottom: 3px solid #ddd;

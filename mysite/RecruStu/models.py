@@ -87,8 +87,24 @@ class Seninor2_Upload(Upload_File):
         db_table = "Seninor2_Upload"
         verbose_name_plural = "大學考試入學檔案"
 
+#-----轉學考
+
+
+class Transfer_Test_Detail(models.Model):
+    project = models.CharField("測驗項目", max_length=50, blank=True)
+    description = models.TextField("測驗說明", max_length=500, blank=True)
+
+    class Meta:
+        db_table = "Transfer_Test_Detail"
+        verbose_name_plural = "轉學考細項目"
+
+    def __unicode__(self):
+        return self.project
+
 
 class Transfer_Test(models.Model):
+    contact = models.ManyToManyField(
+        Transfer_Test_Detail, related_name='transtestdetail')
     title = models.TextField("轉學考招生標題", max_length=200)
     place = models.TextField("招生名額", max_length=100, blank=True)
     commonsubject = models.TextField("共同科目", max_length=50, blank=True)
@@ -103,39 +119,6 @@ class Transfer_Test(models.Model):
 
     def __unicode__(self):
         return self.title
-
-
-class Transfer_Test_mode(models.Model):
-    contact = models.ForeignKey(Transfer_Test, related_name='transtestm')
-    name = models.CharField("測驗名稱", max_length=50, blank=True)
-
-    class Meta:
-        db_table = "Transfer_Test_mode"
-        verbose_name_plural = "轉學考測驗項目"
-
-    def __unicode__(self):
-        return self.name
-
-
-class Transfer_Test_Detail(models.Model):
-    contact = models.ForeignKey(
-        Transfer_Test_mode, related_name='transtestdetail')
-
-    class Meta:
-        db_table = "Transfer_Test_Detail"
-        verbose_name_plural = "轉學考細項目"
-
-
-class Transfer_Test_Detail2(models.Model):
-    contact = models.ForeignKey(
-        Transfer_Test_Detail, related_name='transtestdetail2')
-    project = models.CharField("測驗項目", max_length=50, blank=True)
-    description = models.TextField("測驗說明", max_length=500, blank=True)
-
-    class Meta:
-        db_table = "Transfer_Test_Detail2"
-        verbose_name_plural = "轉學考細項目"
-        
 
 
 class Transfer_Test_Upload(Upload_File):
@@ -184,6 +167,7 @@ class Master_night2(models.Model):
         db_table = "Master_night2"
         verbose_name = "上傳碩專班招生資訊"
         verbose_name_plural = "碩專班招生"
+
     def __unicode__(self):
         return self.title
 
@@ -207,9 +191,10 @@ class Traffic_Information(models.Model):
         db_table = "Traffic_Information"
         verbose_name = "上傳交通資訊"
         verbose_name_plural = "交通資訊"
-    
+
     def __unicode__(self):
         return str(self.name)
+
 
 class Traffic_Method(models.Model):
     contact = models.ForeignKey(Traffic_Information, related_name='trafmeth')
@@ -223,14 +208,16 @@ class Traffic_Method(models.Model):
 
 #--------榜單專區
 class List(models.Model):
-    title=models.CharField('榜單名稱',max_length=20)
-    discription=models.TextField('說明(包含報到等)',max_length=800)
+    title = models.CharField('榜單名稱', max_length=20)
+    discription = models.TextField('說明(包含報到等)', max_length=800)
 
     class Meta:
-        db_table="List"
-        verbose_name_plural="各項考試榜單"
+        db_table = "List"
+        verbose_name_plural = "各項考試榜單"
+
     def __unicode__(self):
         return self.title
+
 
 class List_Upload(Upload_File):
     contact = models.ForeignKey(List, related_name='listupload')
@@ -241,8 +228,3 @@ class List_Upload(Upload_File):
 
 
 #-------最後一項:新生入學專區
-
-
-
-
-

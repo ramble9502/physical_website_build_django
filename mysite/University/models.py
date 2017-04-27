@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+import datetime
 # Create your models here.
 #----------父類別
 
@@ -81,3 +82,19 @@ class StudentCorner_Upload(Upload_File):
     class Meta:
         db_table = "StudentCorner_Upload"
         verbose_name_plural = "學生園地資料上傳"
+
+
+class Crossdomain(models.Model):
+    create_year = models.IntegerField("學年度", default=1)
+    create_date = models.DateField("公布日期", default=datetime.date.today)
+    file = models.FileField("跨領域學分檔案1", upload_to="master/file", blank=True)
+    file2 = models.FileField("跨領域學分檔案2", upload_to="master/file", blank=True)
+    crosstitle = models.CharField("跨領域學分名稱", max_length=50)
+
+    class Meta:
+        db_table = "Crossdomain"
+        verbose_name = "上傳跨領域學分學程"
+        verbose_name_plural = "跨領域學分學程"
+
+    def __unicode__(self):
+        return self.crosstitle

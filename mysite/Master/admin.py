@@ -5,6 +5,7 @@ from django.forms import Textarea
 # Register your models here.
 
 
+
 class Course_Architecture_Upload(admin.TabularInline):
     model = Course_Architecture_Upload
 
@@ -47,6 +48,14 @@ class Graduatedpaper_Class(admin.ModelAdmin):
     inlines = [Graduatedpaper_Upload]
 
 
+class Teachemaster_Upload(admin.TabularInline):
+    model = Teachemaster_Upload
+
+
+class Teachemaster_Class(admin.ModelAdmin):
+    inlines = [Teachemaster_Upload]
+
+
 admin.site.register(Schoolpaper, Schoolpaper_Class)
 admin.site.register(Study_Group, Study_Group_Class)
 admin.site.register(Bachelor_Test, Bachelor_Test_Class)
@@ -54,3 +63,4 @@ admin.site.register(Course_Architecture, Course_Architecture_Class)
 admin.site.register(Seminar_Information)
 admin.site.register(Graduatedpaper, Graduatedpaper_Class)
 admin.site.register(Archeology)
+admin.site.register(Teachemaster, Teachemaster_Class)

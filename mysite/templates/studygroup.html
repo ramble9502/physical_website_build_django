@@ -5,8 +5,13 @@
     </div>
     {% block content %}
     <div class="depar_title">
+        <select  onchange="location = this.options[this.selectedIndex].value;">
         {% for stu in studygroup %}
-        <h4>{{stu.title}}</h4> 
+            <option value="#stu{{stu.id}}">{{stu.title}}</option>
+        {%endfor%}
+        </select>
+        {% for stu in studygroup %}
+        <h4 id="stu{{stu.id}}">{{stu.title}}</h4> 
         {% for i in stu.studygroup.all%}
         <ul>
             <li>{{i.filename}}
