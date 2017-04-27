@@ -16,10 +16,10 @@
         <ul>
             <li>{{i.filename}}
             {% if i.file1 %}
-            <a href="{{i.file1.url}}">[DOWNLOAD]</a></li>
+            <a href="{{i.file1.url}}" target='_blank'>[DOWNLOAD]</a></li>
             {% endif %}
             {% if i.file2 %}
-            <a href="{{i.file2.url}}">[DOWNLOAD]</a></li>
+            <a href="{{i.file2.url}}"> target='_blank'[DOWNLOAD]</a></li>
             {% endif %}
         </ul>
         {% endfor %}
@@ -27,10 +27,10 @@
         <ul>
             <li>{{i.filename}}
             {% if i.file1 %}
-            <a href="{{i.file1.url}}">[DOWNLOAD]</a></li>
+            <a href="{{i.file1.url}}" target='_blank'>[DOWNLOAD]</a></li>
             {% endif %}
             {% if i.file2 %}
-            <a href="{{i.file2.url}}">[DOWNLOAD]</a></li>
+            <a href="{{i.file2.url}}" target='_blank'>[DOWNLOAD]</a></li>
             {% endif %}
         </ul>
         {% endfor %}
