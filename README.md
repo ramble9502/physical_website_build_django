@@ -64,7 +64,15 @@ sudo chown -R www-data:www-data media_cdn
         
 
 
-sudo a2ensite sitename 或 sudo a2ensite sitename.conf            
+sudo a2ensite sitename 或 sudo a2ensite sitename.conf  
+
+
+待確認完畢後(系統可執行)               
+sudo nano /ramble9502/mysite/mysite/settings.py    
+DEBUG=False            
+
+sudo service apache2 restart
+
 
 相關參考內容 http://www.ziqiangxuetang.com/django/django-deploy.html
 
