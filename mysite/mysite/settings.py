@@ -17,7 +17,7 @@ import sys
 
 PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 # Quick-start development settings - unsuitable for production
