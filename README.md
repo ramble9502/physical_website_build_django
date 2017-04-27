@@ -16,9 +16,9 @@ pip install Django==1.9
 
 mysql -u root -p                 
 CREATE DATABASE <dbname> CHARACTER SET utf8;                
-(Database 的名稱帳號密碼與 mysite/mysite/settings.py 裡的 DATABASES必須吻合，需再自行更改裡面內容)  
-cd /home/user/ramble9502/mysite            
-python manage.py makemigraitons               
+(Database 的名稱帳號密碼與 mysite/mysite/settings.py 裡的 DATABASES必須吻合，需再自行更改裡面內容)    
+cd /home/user/ramble9502/mysite                 
+python manage.py makemigraitons                      
 python manage.py migrate              
 python manage.py createsuperuser                   
 (創建帳號密碼  帳號：admin87932 密碼：47zX6h8cXc)                
