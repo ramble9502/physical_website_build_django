@@ -18,7 +18,9 @@
                 <p>教授課程 : {{fulldetail.course}}</p>
             </div>
             <div class="fullimage" style="width:25%; float:left;">
+                {% if fulldetail.photo.url %}
                 <img src="{{fulldetail.photo.url}}" style="width:100%; overflow:hidden;">
+                {%endif%}
             </div>
             <div style="clear:both;"></div>
             <h5 style="font-size: 14px;color: darkred;margin-top: 20px;margin-bottom: 10px;text-align: left;border-left: solid #C84937 10px;padding:0 10px;box-sizing:border-box;border-bottom:solid #C84937 1px;">WORK</h5>

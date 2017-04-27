@@ -8,7 +8,9 @@
         {% for tea in fulltime_teacher%}
         <div class="teaintroduce" style="width:48%; border:1px solid #C0C0C0; background-color:#F4F4F4; float:left; display:flex;margin-left:1%;">
         <div class="teaimage" style="width:40%;height:70px;overflow: hidden;padding:0 10px;box-sizing:border-box;margin:10px 0;">
+            {%if tea.photo.url%}
             <img src="{{tea.photo.url}}" alt="img" style="width:70px;">
+            {%endif%}
         </div>
         <div class="teainformation" style="width:60%; text-align:center;padding:0 20px;box-sizing:border-box;margin:10px 0;"> 
             <div style="font-size:20px;font-weight:700;">{{tea.name}}</div>

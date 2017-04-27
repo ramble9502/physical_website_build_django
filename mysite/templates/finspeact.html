@@ -3,12 +3,18 @@
     {% block content %}
     <div class="depar_title">
     	{% for finspeact in finspeact2 %}
-    	<img src="{{finspeact.image.url}}" style="width:50%;height: auto; ">
+        <img src="{{finspeact.image.url}}" style="width:50%;height: auto; ">
         <p>{{finspeact.name}}</p>
-    	<p>{{finspeact.latest_news|linebreaks}}</p>
-    
-    	<p>{{finspeact.fans_connect}}</p>
-    <p>{{finspeact.related_url}}</p>
+        <p>{{finspeact.latest_news|linebreaks}}</p>
+        {% if finspeact.fans_connect %}
+        <a href="{{finspeact.fans_connect}}" target='_blank'>粉絲團連結</a>
+        {% endif %}
+        {% if finspeact.related_url%}
+        <a href="{{finspeact.related_url}}" target='_blank'>活動網址</a>
+        {%endif%}
+        {% if finspeact.file.url %}
+        <p>報名檔案：<a href="{{finspeact.file.url}}" target='_blank'>[DOWNLOAD]</a></li></p>
+        {% endif %}
     
     {%endfor%}
     </div>
