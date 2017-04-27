@@ -818,74 +818,40 @@ td:last-child {
 @media screen and (max-width: 900px){
     #adbox .body{
         width: 100%;
-        min-width: 740px;
-    }
-    #footer{
-        width: 100%;
-        min-width: 740px;
-    }
-    #header{
-        width: 100%;
-        min-width: 740px;
-    }
-    .schoollogo{
-        display: none;
-    }
-    .phylogo{
-        display: none;
-    }
-    .phylogo2{
-        display: block;
-        width: 80%;
-        margin: 0 auto;
-        height: 60px;
-    }
-    #header img{
-        width: 90%;
-    }
-}
-
-@media screen and (max-width: 500px){
-    #adbox .body{
-        width: 100%;
-        min-width: auto;
-    }
-    #footer{
-        width: 100%;
-        min-width: auto;
-    }
-    #header{
-        width: 100%;
-        min-width: auto;
-    }
-    .phylogo2{
-        display: block;
-        width: 80%;
-        margin: 0 auto;
-        height: 60px;
-    }
-    .phylogo{
-        margin:0 auto;
-    }
-    #header img{
-        width: 90%;
-    }
-    .schoollogo{
-        display: none;
     }
     #adbox .details{
         width: 100%;
     }
-    #adbox .details .imgstyle{
-        height: auto;
+    #footer{
+        width: 100%;
     }
-    table.latest_news , table.training_news{
-        width: 95%;
-        font-size: 15px;
-
+    #header{
+        width: 100%;
+    }
+    .schoollogo{
+        display: none;
+    }
+    .phylogo{
+        display: none;
+    }
+    .phylogo2{
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        height: 60px;
+    }
+    #header img{
+        width: 90%;
+    }
+    table.latest_news{
+        width: 100%;
+    }
+    table.training_news{
+        width: 100%;
     }
     #adbox .details > .scrolling-limit{
         width: 100%;
     }
-
 }
+
+
