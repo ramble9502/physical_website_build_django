@@ -23,8 +23,8 @@ from ActivityNews.views import index, finspeact, latestnews, workshopnews
 from DepartIntro.views import departintro, teachgoal, legislation, equipment, offregulation
 from RecruStu.views import sportexcellent, senioradmi, unitestdistribute, transform, masteradmission, manightadmission, liston, trafficmethod
 from Teacher.views import fulltime_teacher, fulldetail, parttime_teacher, partdetail
-from University.views import courseplan, curriculum, studentcorner
-from Master.views import coursearchi, bachelortest, seminar, schoolpaper, graduatedpaper, studygroup , archeology
+from University.views import courseplan, curriculum, studentcorner, crossdomain
+from Master.views import teachmaster, coursearchi, bachelortest, seminar, schoolpaper, graduatedpaper, studygroup , archeology
 from Masternight.views import ncoursearchi
 from Others.views import honor, alumni, stuaccociation, coursemap
 from Activities.views import activities1, actdetail, activities2, activities3
@@ -38,6 +38,8 @@ urlpatterns = [
     url(r'^workshopnews/', workshopnews),
     url(r'^depart_character/', departintro),
     url(r'^$', index),
+    url(r'^crossdomain/', crossdomain),
+    url(r'^teachmaster/', teachmaster),
     url(r'^teachgoal/', teachgoal),
     url(r'^finspeact/(?P<id>\d+)/$', finspeact),
     url(r'^legistlate/', legislation),
